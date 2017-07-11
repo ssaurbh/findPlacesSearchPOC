@@ -1,0 +1,35 @@
+<div ng-controller='landmarkController'>
+   <div style="width: 800px;border: 1px solid lightgray;">
+   <div style="width: 800px;height:30;background: #03a9f4"></div>	
+   <div style="background-image: url('../../images/wallpaper.jpg');width: 800px;overflow: hidden;">	
+               
+    <div class="capsule">
+        <p style="margin-left: 10px;margin-top: 20px;text-align: center"> {{date | date:'yyyy-MM-dd'}}</p>
+     </div>
+    <ul>
+      <li style="display: block;" ng-repeat="item in items track by $index">
+       
+        <div class="talk-bubble tri-right left-in">
+	<div class="talktext">
+    	<p>{{item.title}}</p><p>{{item.arrTime | date: "HH:mm:ss"}}</p><br><br>
+ 
+
+ 	 </div>
+	</div>
+	<img style="margin-left: 300px;height: 300px;width:300px; border: 2px solid #rgba(3, 169, 244, 0.1);" ng-src="{{item.path}}" alt="{{item.title}}">
+	      </li>
+    </ul>
+</div>
+    </div>
+
+     <form name="frm" ng-submit="addToList()">
+      <input style="width:800px;line-height:40px;text" placeholder="Enter any landmark name here and press enter" type="text" name="newItem" ng-model="newItem" required />
+      <div>
+      <img style ="height: 20px;width: 20px" src="images/mic.png">
+      <span style="margin-left: 8px;font-style: italic;color: rgba(3, 169, 244, 0.88);margin-top:20px">For Voice Based Support say "Show me Taj Mahal!!"</span></div>
+    </form>
+
+
+
+  </div>
+     
